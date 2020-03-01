@@ -1,0 +1,38 @@
+{
+  language: 'Português do Brasil',
+  langCode: 'pt_BR',   // if not specified will use folder
+  defaultExampleCaption: "clique aqui para abrir uma janela separada",
+  title: 'fundamentos do three.js',
+  description: 'Aprenda Three.js',
+  link: 'http://threejsfundamentals.org/',
+  commentSectionHeader: `
+    <div>Dúvidas? <a href="http://stackoverflow.com/questions/tagged/three.js">Pergunte no stackoverflow</a>.</div>
+    <div>
+       <a href="https://github.com/gfxfundamentals/threejsfundamentals/issues/new?assignees=&labels=suggested+topic&template=suggest-topic.md&title=%5BSUGGESTION%5D">Sugestões</a>?
+       <a href="https://github.com/gfxfundamentals/threejsfundamentals/issues/new?assignees=&labels=&template=request.md&title=">Solicitações</a>?
+       <a href="https://github.com/gfxfundamentals/threejsfundamentals/issues/new?assignees=&labels=bug+%2F+issue&template=bug-issue-report.md&title=">Problema</a>?
+       <a href="https://github.com/gfxfundamentals/threejsfundamentals/issues/new?assignees=&labels=bug+%2F+issue&template=bug-issue-report.md&title=">Bug</a>?
+    </div>
+    <div class="lesson-comment-notes">
+       Use <b>&lt;pre&gt;&lt;code&gt;</b>código vai aqui<b>&lt;/code&gt;&lt;/pre&gt;</b> para blocos de código
+    </div>
+  `,
+  missing: `
+     Desculpe, mas esse aetigo aind não foi traduzido. 
+     [Translations Welcome](https://github.com/gfxfundamentals/threejsfundamentals)! 😄
+     
+     [Here's the original English article for now]({{{origLink}}}).
+  `,
+  toc: 'Índice',
+  categoryMapping: {
+    'basics': 'Básico',
+    'solutions': 'Soluções',
+    'webvr': 'WebVR',
+    'optimization': 'Otimização',
+    'tips': 'Dicas',
+    'fundamentals': 'Fundamentos',
+    'reference': 'Referência',
+  },
+}
+
+
