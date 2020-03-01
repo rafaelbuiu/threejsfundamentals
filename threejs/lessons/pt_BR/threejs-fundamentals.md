@@ -35,30 +35,31 @@ Veja abaixo o diagrama de uma pequena aplicação three.js
 
 <div class="threejs_center"><img src="resources/images/threejs-structure.svg" style="width: 768px;"></div>
 
-Things to notice about the diagram above.
+Coisas a se notar no diagrama acima:
 
-* There is a `Renderer`. This is arguably the main object of three.js. You pass a
-  `Scene` and a `Camera` to a `Renderer` and it renders (draws) the portion of
-  the 3D scene that is inside the *frustum* of the camera as a 2D image to a
-  canvas.
+*Aviso: os termos abaixo estarão em inglês para que o uso futuro do aprendizado não seja afetado pela tradução.*
 
-* There is a [scenegraph](threejs-scenegraph.html) which is a tree like
-  structure, consisting of various objects like a `Scene` object, multiple
-  `Mesh` objects, `Light` objects, `Group`, `Object3D`, and `Camera` objects. A
-  `Scene` object defines the root of the scenegraph and contains properties like
-  the background color and fog. These objects define a hierarchical parent/child
-  tree like structure and represent where objects appear and how they are
-  oriented. Children are positioned and oriented relative to their parent. For
-  example the wheels on a car might children of the car so that moving and
-  orienting the car's object automatically moves the wheels. You can read more
-  about this in [the article on scenegraphs](threejs-scenegraph.html).
+* Há um `Renderer` (Renderizador). Este é sem dúvida o principal objeto do three.js. Os objetos
+  `Scene` (Cena) e `Camera` deverão ser passados para o `Renderer` que no caso renderizará( desenhará) a porção da cena 3D
+  que está na parte visível do *`Frustum`* (Campo de visão) da camera como uma simples images 2D no elemento canvas do HTML.
 
-  Note in the diagram `Camera` is half in half out of the scenegraph. This is to
-  represent that in three.js, unlike the other objects, a `Camera` does not have
-  to be in the scenegraph to function. Just like other objects, a `Camera`, as a
-  child of some other object, will move and orient relative to its parent object.
-  There is an example of putting multiple `Camera` objects in a scenegraph at
-  the end of [the article on scenegraphs](threejs-scenegraph.html).
+* Este diagrama é um [scenegraph](threejs-scenegraph.html) (Gráfico de cena) que se caracteriza por ser uma estrutura do tipo árvore,
+  que se consiste na lista dos objetos presentes na aplicação. Podemos ver objetos dos tipo `Scene` (Cena), 
+  `Mesh`,  `Light`, `Group`, `Object3D` e `Camera`. 
+  Um objeto do tipo `Scene` (Cena) é definido como a raiz do gráfico de cena e possui propriedades como
+  cor de fundo e `Fog` (névoa). 
+  
+  Estes objetos definem a árvore hierarquica da aplicação 
+  e representam onde e como os objetos serão apresentados.
+  Objetos descendentes são posicionados e orientados relativamente ao seus antescendentes.
+  Um exemplo claro seriam as rodas de um carro, nas quais são descendentes do objeto *Carro*. 
+  A movimentação e orientação do carro automaticamente moverá e orientará o objeto *Roda*
+  Encontre mais informações no [artigo sobre Gráficos de cena](threejs-scenegraph.html).
+
+  Note que no diagrama, o objeto `Camera` está parcialmete dentro da estrutura do gráfico de cena. 
+  Isto é para demonstrar que no three.js, a `Camera` não precisa pertencer diretamente à cena para funcionar.
+  Como qualuqer outro objeto, a `Camera`, pode ser um objeto descendente de outro objeto e será movida e orientada relativamente ao objeto a que pertence.
+  Há um ótimo exemplo de múltiplos objetos de `Camera` em um único gráfico de cena no final do [artigo sobre Gráficos de cena](threejs-scenegraph.html).
 
 * `Mesh` objects represent drawing a specific `Geometry` with a specific
    `Material`. Both `Material` objects and `Geometry` objects can be used by
