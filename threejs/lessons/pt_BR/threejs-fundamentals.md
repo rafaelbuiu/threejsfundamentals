@@ -61,6 +61,7 @@ Coisas a se notar no diagrama acima:
   Como qualuqer outro objeto, a `Camera`, pode ser um objeto descendente de outro objeto e será movida e orientada relativamente ao objeto a que pertence.
   Há um ótimo exemplo de múltiplos objetos de `Camera` em um único gráfico de cena no final do [artigo sobre Gráficos de cena](threejs-scenegraph.html).
 
+
 * `Mesh` objects represent drawing a specific `Geometry` with a specific
    `Material`. Both `Material` objects and `Geometry` objects can be used by
    multiple `Mesh` objects. For example to draw 2 blue cubes in different
