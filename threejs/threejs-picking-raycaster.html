@@ -20,7 +20,7 @@
     <canvas id="c"></canvas>
   </body>
 <script type="module">
-import * as THREE from './resources/threejs/r113/build/three.module.js';
+import * as THREE from './resources/threejs/r119/build/three.module.js';
 
 function main() {
   const canvas = document.querySelector('#c');
@@ -146,15 +146,15 @@ function main() {
   function getCanvasRelativePosition(event) {
     const rect = canvas.getBoundingClientRect();
     return {
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
+      x: (event.clientX - rect.left) * canvas.width  / rect.width,
+      y: (event.clientY - rect.top ) * canvas.height / rect.height,
     };
   }
 
   function setPickPosition(event) {
     const pos = getCanvasRelativePosition(event);
-    pickPosition.x = (pos.x / canvas.clientWidth ) *  2 - 1;
-    pickPosition.y = (pos.y / canvas.clientHeight) * -2 + 1;  // note we flip Y
+    pickPosition.x = (pos.x / canvas.width ) *  2 - 1;
+    pickPosition.y = (pos.y / canvas.height) * -2 + 1;  // note we flip Y
   }
 
   function clearPickPosition() {

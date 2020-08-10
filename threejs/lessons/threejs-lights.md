@@ -5,7 +5,7 @@ TOC: Lights
 This article is part of a series of articles about three.js. The
 first article is [three.js fundamentals](threejs-fundamentals.html). If
 you haven't read that yet and you're new to three.js you might want to
-consider starting there. The
+consider starting there and also the article on [setting up your environment](threejs-setup.html). The
 [previous article was about textures](threejs-textures.html).
 
 Let's go over how to use the various kinds of lights in three.
@@ -29,8 +29,8 @@ an optional feature of three.js so first we need to include them
 in our page
 
 ```js
-import * as THREE from './resources/three/r113/build/three.module.js';
-+import {OrbitControls} from './resources/threejs/r113/examples/jsm/controls/OrbitControls.js';
+import * as THREE from './resources/three/r119/build/three.module.js';
++import {OrbitControls} from './resources/threejs/r119/examples/jsm/controls/OrbitControls.js';
 ```
 
 Then we can use them. We pass the `OrbitControls` a camera to
@@ -477,9 +477,9 @@ To use the `RectAreaLight` we need to include some extra three.js optional data 
 include the `RectAreaLightHelper` to help us visualize the light
 
 ```js
-import * as THREE from './resources/three/r113/build/three.module.js';
-+import {RectAreaLightUniformsLib} from './resources/threejs/r113/examples/jsm/lights/RectAreaLightUniformsLib.js';
-+import {RectAreaLightHelper} from './resources/threejs/r113/examples/jsm/helpers/RectAreaLightHelper.js';
+import * as THREE from './resources/three/r119/build/three.module.js';
++import {RectAreaLightUniformsLib} from './resources/threejs/r119/examples/jsm/lights/RectAreaLightUniformsLib.js';
++import {RectAreaLightHelper} from './resources/threejs/r119/examples/jsm/helpers/RectAreaLightHelper.js';
 ```
 
 and we need to call `RectAreaLightUniformsLib.init`

@@ -1,9 +1,4 @@
-'use strict';
-
-/* global importScripts, init, state */
-
-importScripts('resources/threejs/r113/build/three.min.js');
-importScripts('shared-cubes.js');
+import {init, state} from './shared-cubes.js';
 
 function size(data) {
   state.width = data.width;

@@ -19,7 +19,7 @@ most part they will use ES6 style. [See here for a
 terse list of things you're expected to already know](threejs-prerequisites.html).
 Most browsers that support three.js are auto-updated so most users should
 be able to run this code. If you'd like to make this code run
-on really old browsers look into a transpiler like [Babel](https://babel.io).
+on really old browsers look into a transpiler like [Babel](https://babeljs.io).
 Of course users running really old browsers probably have machines
 that can't run three.js.
 
@@ -49,7 +49,7 @@ Things to notice about the diagram above.
   the background color and fog. These objects define a hierarchical parent/child
   tree like structure and represent where objects appear and how they are
   oriented. Children are positioned and oriented relative to their parent. For
-  example the wheels on a car might children of the car so that moving and
+  example the wheels on a car might be children of the car so that moving and
   orienting the car's object automatically moves the wheels. You can read more
   about this in [the article on scenegraphs](threejs-scenegraph.html).
 
@@ -96,7 +96,7 @@ First let's load three.js
 
 ```html
 <script type="module">
-import * as THREE from './resources/threejs/r113/build/three.module.js';
+import * as THREE from './resources/threejs/r119/build/three.module.js';
 </script>
 ```
 
@@ -119,7 +119,7 @@ We will ask three.js to draw into that canvas so we need to look it up.
 
 ```html
 <script type="module">
-import * as THREE from './resources/threejs/r113/build/three.module.js';
+import * as THREE from './resources/threejs/r119/build/three.module.js';
 
 +function main() {
 +  const canvas = document.querySelector('#c');
@@ -159,7 +159,7 @@ dimension. Note that most angles in three.js are in radians but for some
 reason the perspective camera takes degrees.
 
 `aspect` is the display aspect of the canvas. We'll go over the details
-[in another article](threejs-responsive.html) but by default a canvas i
+[in another article](threejs-responsive.html) but by default a canvas is
  300x150 pixels which makes the aspect 300/150 or 2.
 
 `near` and `far` represent the space in front of the camera
@@ -406,7 +406,7 @@ a different color.
 I hope this short intro helps to get things started. [Next up we'll cover
 making our code responsive so it is adaptable to multiple situations](threejs-responsive.html).
 
-<div class="threejs_bottombar">
+<div id="es6" class="threejs_bottombar">
 <h3>es6 modules, three.js, and folder structure</h3>
 <p>As of version r106 the preferred way to use three.js is via <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">es6 modules</a>.</p>
 <p>
@@ -416,7 +416,7 @@ both
 </p>
 <pre class=prettyprint>
 &lt;script type="module"&gt;
-import * as THREE from './resources/threejs/r113/build/three.module.js';
+import * as THREE from './resources/threejs/r119/build/three.module.js';
 
 ...
 

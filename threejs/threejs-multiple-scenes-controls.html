@@ -49,8 +49,8 @@
     </p>
   </body>
 <script type="module">
-import * as THREE from './resources/threejs/r113/build/three.module.js';
-import {TrackballControls} from './resources/threejs/r113/examples/jsm/controls/TrackballControls.js';
+import * as THREE from './resources/threejs/r119/build/three.module.js';
+import {TrackballControls} from './resources/threejs/r119/examples/jsm/controls/TrackballControls.js';
 
 function main() {
   const canvas = document.querySelector('#c');
@@ -82,7 +82,7 @@ function main() {
       const intensity = 1;
       const light = new THREE.DirectionalLight(color, intensity);
       light.position.set(-1, 2, 4);
-      scene.add(light);
+      camera.add(light);
     }
 
     return {scene, camera, controls};

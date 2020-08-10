@@ -260,7 +260,7 @@ while the rest of the page scrolled over it. `position: absolute` will let the c
 
 Now that we've gotten multiple scenes working let's make this just slightly more generic.
 
-We could make it so the main render function, the one managing the canvas, just has a list of elements and their associated render function. For each element it would check if the element is on screen and if so call the corresponding render function. In this way we'd have a generic system where individual scenes aren't really aware they are aware they are being rendered in some smaller space.
+We could make it so the main render function, the one managing the canvas, just has a list of elements and their associated render function. For each element it would check if the element is on screen and if so call the corresponding render function. In this way we'd have a generic system where individual scenes aren't really aware they are being rendered in some smaller space.
 
 Here's the main render function
 
@@ -351,7 +351,7 @@ Now the setup code for each scene just adds itself to the list of scenes
 }
 ```
 
-With that we no longer needed `sceneInfo1` and `sceneInfo2` and the code that was rotating the meshes is now specific to each scene.
+With that we no longer need `sceneInfo1` and `sceneInfo2` and the code that was rotating the meshes is now specific to each scene.
 
 {{{example url="../threejs-multiple-scenes-generic.html" }}}
 
@@ -432,7 +432,7 @@ document.querySelectorAll('[data-diagram]').forEach((elem) => {
   const sceneName = elem.dataset.diagram;
   const sceneInitFunction = sceneInitFunctionsByName[sceneName];
   const sceneRenderFunction = sceneInitFunction(elem);
-  addScene(elem, sceneRenderFunction());
+  addScene(elem, sceneRenderFunction);
 });
 ```
 
@@ -445,7 +445,7 @@ No change to the visuals but the code is even more generic.
 Adding interactively, for example a `TrackballControls` is just as easy. First we add the script for the control.
 
 ```js
-import {TrackballControls} from './resources/threejs/r113/examples/jsm/controls/TrackballControls.js';
+import {TrackballControls} from './resources/threejs/r119/examples/jsm/controls/TrackballControls.js';
 ```
 
 And then we can add a `TrackballControls` to each scene passing in the element associated with that scene.
@@ -683,5 +683,5 @@ The result looks the same
 
 One other advantage to this solution is you could potentially use
 [`OffscreenCanvas`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas)
-to render from a web worker and still use this technique. Unfortunately as of April 2019
+to render from a web worker and still use this technique. Unfortunately as of July 2020
 `OffscreenCanvas` is only supported by Chrome.

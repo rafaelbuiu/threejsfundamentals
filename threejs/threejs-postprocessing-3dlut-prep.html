@@ -21,9 +21,9 @@
     <canvas id="c"></canvas>
   </body>
 <script type="module">
-import * as THREE from './resources/threejs/r113/build/three.module.js';
-import {OrbitControls} from './resources/threejs/r113/examples/jsm/controls/OrbitControls.js';
-import {GLTFLoader} from './resources/threejs/r113/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from './resources/threejs/r119/build/three.module.js';
+import {OrbitControls} from './resources/threejs/r119/examples/jsm/controls/OrbitControls.js';
+import {GLTFLoader} from './resources/threejs/r119/examples/jsm/loaders/GLTFLoader.js';
 
 function main() {
   const canvas = document.querySelector('#c');
@@ -91,6 +91,13 @@ function main() {
     gltfLoader.load('resources/models/3dbustchallange_submission/scene.gltf', (gltf) => {
       const root = gltf.scene;
       scene.add(root);
+
+      // fix materials from r114
+      root.traverse(({material}) => {
+        if (material) {
+          material.depthWrite = true;
+        }
+      });
 
       // compute the box that contains all the stuff
       // from root and below

@@ -19,19 +19,14 @@
   <body>
     <canvas id="c"></canvas>
   </body>
-<script src="resources/threejs/r113/build/three.min.js"></script>
-<script src="resources/threejs/r113/examples/js/controls/OrbitControls.js"></script>
-<script src="shared-picking.js"></script>
-<script>
-'use strict';  // eslint-disable-line
-
-/* global state, init, pickPosition */
+<script type="module">
+import {state, init, pickPosition} from './shared-picking.js';
 
 let sendMouse;
 
 function startWorker(canvas) {
   const offscreen = canvas.transferControlToOffscreen();
-  const worker = new Worker('offscreencanvas-worker-picking.js');
+  const worker = new Worker('offscreencanvas-worker-picking.js', {type: 'module'});
   worker.postMessage({type: 'init', canvas: offscreen}, [offscreen]);
 
   sendMouse = (x, y) => {
@@ -85,16 +80,16 @@ function main() {  /* eslint consistent-return: 0 */
   function getCanvasRelativePosition(event) {
     const rect = canvas.getBoundingClientRect();
     return {
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
-    };
+      x: (event.clientX - rect.left) * canvas.width  / rect.width,
+      y: (event.clientY - rect.top ) * canvas.height / rect.height,
+   };
   }
 
   function setPickPosition(event) {
     const pos = getCanvasRelativePosition(event);
     sendMouse(
-        (pos.x / canvas.clientWidth ) *  2 - 1,
-        (pos.y / canvas.clientHeight) * -2 + 1);  // note we flip Y
+        (pos.x / canvas.width ) *  2 - 1,
+        (pos.y / canvas.height) * -2 + 1);  // note we flip Y
   }
 
   function clearPickPosition() {
